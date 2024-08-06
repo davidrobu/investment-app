@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { UserInputComponent } from '../../user-input/user-input.component';
 import { InvestmentResultsComponent } from '../../components/investment-results/investment-results.component';
 import { RouterLink } from '@angular/router';
+import { UserInputComponent } from '../../components/user-input/user-input.component';
 
 @Component({
   selector: 'app-investment-calculator',
