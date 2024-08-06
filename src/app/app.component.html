@@ -5,15 +5,11 @@
   @if(isSubmit() ){
   <app-investment
     [InitialInvestment]="InitialInvestment"
-    ,
     [ExpectedReturn]="ExpectedReturn"
-    ,
     [Duration]="Duration"
-    ,
     [AnnualInvestment]="AnnualInvestment"
   />
   } @else{
-
-  <p id="fallback">Please enter some values and press "Calculate"</p>
+    <p id="fallback">Please enter some values and press "Calculate"</p>
   }
 </main>
