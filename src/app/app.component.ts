@@ -8,22 +8,26 @@ import { InvestmentResultsComponent } from './investment-results/investment-resu
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [HeaderComponent, UserInputComponent, InvestmentResultsComponent]
+  imports: [HeaderComponent, UserInputComponent, InvestmentResultsComponent],
 })
 export class AppComponent {
-InitialInvestment=''
-AnnualInvestment=''
-ExpectedReturn=''
-Duration=''
-isSubmit=signal(false)
-  onSubmit(InitialInvestment:any, AnnualInvestment:any, ExpectedReturn:any,Duration:any){
-InitialInvestment: InitialInvestment;
-AnnualInvestment:AnnualInvestment;
-ExpectedReturn:ExpectedReturn;
-Duration:Duration;
-  }
-  debug(){
-    console.log('hello')
-    this.isSubmit.set(true)
+  InitialInvestment = 0;
+  AnnualInvestment = 0;
+  ExpectedReturn = 0;
+  Duration = 0;
+  isSubmit = signal(false);
+
+  onData(data: {
+    InitialInvestment: number;
+    AnnualInvestment: number;
+    ExpectedReturn: number;
+    Duration: number;
+  }) {
+    this.InitialInvestment = data.InitialInvestment;
+    this.AnnualInvestment = data.AnnualInvestment;
+    this.ExpectedReturn = data.ExpectedReturn;
+    this.Duration = data.Duration;
+
+    this.isSubmit.set(true);
   }
 }

@@ -6,23 +6,27 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css',
-  imports: [FormsModule ]
+  imports: [FormsModule],
 })
 export class UserInputComponent {
-    @Output() submit = new EventEmitter<{}>()
-    InitialInvestment=''
-    ExpectedReturn=''
-    AnnualInvestment=''
-    Duration=''
-    
-    onSubmit(){
-      console.log('hi')
-        this.submit.emit({
-        InitialInvestment:this.InitialInvestment,
-        ExpectedReturn: this.ExpectedReturn,
-        AnnualInvestment:this.AnnualInvestment,
-        Duration:this.Duration
+  @Output() data = new EventEmitter<{
+    InitialInvestment: number;
+    AnnualInvestment: number;
+    ExpectedReturn: number;
+    Duration: number;
+  }>();
 
-        })
-    }
+  InitialInvestment = 0;
+  ExpectedReturn = 0;
+  AnnualInvestment = 0;
+  Duration = 0;
+
+  onSubmit() {
+    this.data.emit({
+      InitialInvestment: this.InitialInvestment,
+      ExpectedReturn: this.ExpectedReturn,
+      AnnualInvestment: this.AnnualInvestment,
+      Duration: this.Duration,
+    });
+  }
 }
