@@ -1,16 +1,1 @@
-<app-header />
-<h1>Cf Wai</h1>
-
-<main>
-  <app-userinput (data)="onData($event)" />
-  @if(isSubmit() ){
-  <app-investment
-    [InitialInvestment]="InitialInvestment"
-    [ExpectedReturn]="ExpectedReturn"
-    [Duration]="Duration"
-    [AnnualInvestment]="AnnualInvestment"
-  />
-  } @else{
-  <p id="fallback">Please enter some values and press "Calculate"</p>
-  }
-</main>
+<router-outlet></router-outlet>
